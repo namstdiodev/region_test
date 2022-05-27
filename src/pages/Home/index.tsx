@@ -1,12 +1,17 @@
+import { useEffect } from "react";
 import React from "react";
-import logo from "./logo.svg";
-import "./assets/styles/global.scss";
-
-function App() {
+import CountriesAPI from "../../services/api/countries";
+function Home() {
+  const getAll = async () => {
+    const response = await CountriesAPI.getAll();
+    console.log(response);
+  };
+  useEffect(() => {
+    getAll();
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -23,4 +28,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
