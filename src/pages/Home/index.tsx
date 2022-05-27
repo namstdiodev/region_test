@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon } from "@fortawesome/free-solid-svg-icons";
+
 import CountriesAPI from "../../services/api/countries";
 function Home() {
   const getAll = async () => {
@@ -12,6 +15,7 @@ function Home() {
   return (
     <div className="App">
       <header className="App-header">
+        <FontAwesomeIcon icon={faMoon} />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>

@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@mui/icons-material": "^5.8.0",
     "@mui/lab": "^5.0.0-alpha.83",
     "@mui/material": "^5.8.1",
@@ -14,6 +17,7 @@
     "@types/node": "^16.11.36",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
+    "@types/react-fontawesome": "^1.6.5",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^0.27.2",
     "react": "^18.1.0",
