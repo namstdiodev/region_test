@@ -5,6 +5,9 @@ import { BrowserRouter } from "react-router-dom";
 import "./assets/styles/global.scss";
 import { App } from "./components/App";
 import reportWebVitals from "./reportWebVitals";
+import "./components/Header/style.scss";
+import "./components/Content/style.scss";
+import { DarkThemeProvider } from "./components/ContextTheme";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,7 +15,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <DarkThemeProvider>
+        <App />
+      </DarkThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

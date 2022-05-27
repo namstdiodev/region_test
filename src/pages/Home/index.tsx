@@ -1,33 +1,27 @@
-import { useEffect } from "react";
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
-
+import React, { useContext, useEffect } from "react";
+import { Content } from "../../components/Content";
+import { DarkThemeContext } from "../../components/ContextTheme";
+import { Header } from "../../components/Header";
 import CountriesAPI from "../../services/api/countries";
+
+
+
 function Home() {
+  const { isDark } = useContext(DarkThemeContext);
+
   const getAll = async () => {
     const response = await CountriesAPI.getAll();
     console.log(response);
   };
+
   useEffect(() => {
     getAll();
   }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <FontAwesomeIcon icon={faMoon} />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div data-theme={isDark ? "dark" : "light"}>
+      <Header />
+      <Content />
     </div>
   );
 }
