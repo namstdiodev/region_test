@@ -1,33 +1,66 @@
-import { useEffect } from "react";
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
+import CountryCart from "../../components/CountryCart";
+import "./style.scss";
+import Box from "@mui/material/Box";
+import LinearProgress from "@mui/material/LinearProgress";
 
 import CountriesAPI from "../../services/api/countries";
 function Home() {
-  const getAll = async () => {
-    const response = await CountriesAPI.getAll();
-    console.log(response);
+  const [listCountry, setListCountry] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [filterParams, setFilterParams] = useState({
+    name: "",
+    region: "",
+  });
+
+  const mapCountry = (listCountry: Array<object>) => {
+    if (listCountry && listCountry?.length) {
+      return (
+        <>
+          {listCountry?.map((item, index) => {
+            return <CountryCart index={index} data={item} />;
+          })}
+        </>
+      );
+    }
   };
+
+  const getAllCountry = async () => {
+    setIsLoading(true);
+    try {
+      const response = await CountriesAPI.getAll();
+      setListCountry(response?.data || []);
+      setIsLoading(false);
+    } catch (error) {
+      console.error({ error });
+      setIsLoading(false);
+    }
+  };
+
+  const handleSearch = (e: any) => {
+    console.log("e", e);
+  };
+
   useEffect(() => {
-    getAll();
+    getAllCountry();
   }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <FontAwesomeIcon icon={faMoon} />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className=""></header>
+      <div className="content-body">
+        <div>Filter</div>
+        <div className="list-country">
+          <input value={filterParams?.name} onChange={(e) => handleSearch(e)} />
+          {isLoading ? (
+            <Box sx={{ width: "100%" }}>
+              <LinearProgress />
+            </Box>
+          ) : (
+            mapCountry(listCountry)
+          )}
+        </div>
+      </div>
     </div>
   );
 }

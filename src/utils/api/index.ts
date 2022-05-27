@@ -4,10 +4,6 @@ const axiosClient = axios.create({
   })
   axiosClient.interceptors.request.use(
     function(config) {
-    //   const token = CookieUtil.get(COOKIE.JWT)
-    //   if (typeof token !== "undefined") {
-    //     config.headers["Authorization"] = "Bearer " + token
-    //   }
       return config
     },
     function(error) {

@@ -1,0 +1,11 @@
+.content-body {
+  background-color: #fafafa;
+  padding: 40px 300px;
+  height: 100vh;
+  overflow-x: hidden;
+  & .list-country {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
