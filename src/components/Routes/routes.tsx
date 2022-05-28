@@ -11,6 +11,10 @@ export const routes = createRoutes({
       path: "/",
       element: <Pages.Home />,
     },
+    {
+      path: "/detail",
+      element: <Pages.Detail />,
+    },
   ],
   useUserIsAuthenticated,
 });

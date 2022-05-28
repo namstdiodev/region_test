@@ -1,0 +1,76 @@
+.content-body {
+  background-color: #fafafa;
+  padding: 40px 300px;
+  height: 100vh;
+  overflow-x: hidden;
+  // & .list-country {
+  // display: flex;
+  // align-items: center;
+  // flex-wrap: wrap;
+  // }
+
+  & .search-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 78px;
+
+    & .group-search {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 54px;
+      width: 480px;
+      position: relative;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+
+      & .MuiSvgIcon-root {
+        position: absolute;
+        margin-left: 30px;
+        top: 18px;
+      }
+
+      & .search {
+        padding-left: 74px;
+        height: 100%;
+        border-radius: 8px;
+        border: none;
+        width: 100%;
+      }
+    }
+    & .group-filter-region {
+      cursor: pointer;
+    }
+    & .filter-region {
+      background-color: #ffff;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      width: 200px;
+      padding: 0 24px;
+      height: 54px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+
+      & .show-drop-down {
+        border-radius: 8px;
+        display: block;
+        width: 100%;
+        position: absolute;
+        z-index: 99;
+        top: 60px;
+        left: 0;
+        background-color: white;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      & .hide-drop-down {
+        display: none;
+      }
+    }
+  }
+}
