@@ -7,14 +7,12 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
 interface Props {
-  index?: number;
   data?: any;
 }
-export default function CountryCart({ index, data }: Props) {
-  console.log("data", data);
+export default function CountryCart({ data }: Props) {
   return (
     <>
-      <Card key={index} sx={{ maxWidth: 294 }}>
+      <Card sx={{ maxWidth: 294 }}>
         <CardActionArea>
           <CardMedia
             component="img"
