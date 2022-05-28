@@ -3,12 +3,14 @@ import SearchIcon from "@mui/icons-material/Search";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import LinearProgress from "@mui/material/LinearProgress";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import CountryCart from "../../components/CountryCart";
 import CountriesAPI from "../../services/api/countries";
 import "./style.scss";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Menu from "@mui/material/Menu";
+import { DarkThemeContext } from "../../components/ContextTheme";
+import { Header } from "../../components/Header";
 import MenuItem from "@mui/material/MenuItem";
 
 import { debounce } from "lodash";
@@ -17,6 +19,7 @@ import { removeMark } from "../../utils/helper";
 import { Link } from "react-router-dom";
 
 function Home() {
+  const { isDark } = useContext(DarkThemeContext);
   const [listCountry, setListCountry] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [filterParams, setFilterParams] = useState({
@@ -130,8 +133,8 @@ function Home() {
   }, [filterParams]);
 
   return (
-    <div className="App">
-      <header className=""></header>
+    <div data-theme={isDark ? "dark" : "light"}>
+      <Header />
 
       <div className="content-body">
         <div className="search-filter">
