@@ -93,6 +93,10 @@ body {
   color: #61dafb;
 }
 
+a {
+  text-decoration: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -101,3 +105,10 @@ body {
     transform: rotate(360deg);
   }
 }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
