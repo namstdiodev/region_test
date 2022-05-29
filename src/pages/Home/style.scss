@@ -10,6 +10,7 @@
   & .search-filter {
     justify-content: space-between;
     align-items: center;
+    color: var(--text-color);
     & .group-search {
       display: flex;
       justify-content: flex-start;
@@ -26,6 +27,7 @@
 
       & .search {
         background-color: var(--element-color);
+        color: var(--text-color);
         padding-left: 74px;
         height: 100%;
         border-radius: 8px;
@@ -88,5 +90,11 @@
     color: var(--text-color);
     padding-left: 24px;
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+    top: 285px !important;
   }
 }
