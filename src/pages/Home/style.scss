@@ -3,7 +3,7 @@
 }
 
 .content-body {
-  padding: 40px 300px;
+  padding: 40px 5vw;
   height: 100vh;
   overflow-x: hidden;
   // & .list-country {
@@ -13,17 +13,13 @@
   // }
 
   & .search-filter {
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 78px;
-
     & .group-search {
       display: flex;
       justify-content: flex-start;
       align-items: center;
       height: 54px;
-      width: 480px;
       position: relative;
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
       

@@ -17,20 +17,21 @@ export default function CountryCart({ data }: Props) {
     <>
       <Card
         sx={{
-          maxWidth: 294,
           backgroundColor: "var(--element-color)",
           color: "var(--text-color)",
         }}
         className="cart-country"
       >
         <CardActionArea>
-          <CardMedia
-            component="img"
-            height="190"
-            image={data?.flags?.png}
-            alt="flag"
-          />
-          <CardContent>
+          <div className="expect-16-9">
+            <CardMedia
+              component="img"
+              height="190"
+              image={data?.flags?.png}
+              alt="flag"
+            />
+          </div>
+          <CardContent sx={{ padding: "1.5rem 1rem 2rem 1rem" }}>
             <Typography
               gutterBottom
               variant="subtitle1"
@@ -42,17 +43,17 @@ export default function CountryCart({ data }: Props) {
             </Typography>
             <Typography variant="body2">
               <div>
-                <div>
+                <div className="mb-1">
                   <span className="title-info text-region-info">
                     Population:
                   </span>
                   <span> {formatNumber(data?.population)}</span>
                 </div>
-                <div>
+                <div className="mb-1">
                   <span className="text-region-info">Region:</span>
                   <span> {data?.region}</span>
                 </div>
-                <div>
+                <div className="mb-1">
                   <span className="text-region-info">Capital:</span>
                   <span> {data?.capital?.[0]}</span>
                 </div>

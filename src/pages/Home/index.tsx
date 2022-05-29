@@ -40,13 +40,9 @@ function Home() {
   const mapCountry = (listCountry: Array<object>) => {
     if (listCountry && listCountry?.length) {
       return (
-        <Grid
-          container
-          spacing={{ xs: 4, md: 8 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-        >
+        <Grid container spacing={{ xs: 4, md: 8 }}>
           {listCountry?.map((item: any, index) => (
-            <Grid item xs={2} sm={4} md={3} key={index}>
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
               <Link to={`/detail?country=${item?.name?.common}`}>
                 <CountryCart data={item} />
               </Link>
@@ -137,8 +133,31 @@ function Home() {
       <div className="background-container">
         <Header />
         <div className="content-body">
-          <div className="search-filter">
-            <div className="group-search">
+          <Box
+            sx={{
+              display: {
+                xs: "block",
+                md: "flex",
+              },
+              mb: {
+                xs: "1rem",
+                md: "78px",
+              },
+            }}
+            className="search-filter"
+          >
+            <Box
+              sx={{
+                width: {
+                  md: "480px",
+                },
+                mb: {
+                  xs: "3rem",
+                  md: "0px",
+                },
+              }}
+              className="group-search"
+            >
               <SearchIcon sx={{ color: "var(--icon-color)" }} />
               <input
                 className="search"
@@ -149,7 +168,7 @@ function Home() {
                   handleSearch(e);
                 }}
               />
-            </div>
+            </Box>
             <div className="group-filter-region">
               <button onClick={handleClick} className="filter-region">
                 <div className="filter-region-text">
@@ -187,15 +206,24 @@ function Home() {
                   })}
               </Menu>
             </div>
-          </div>
+          </Box>
 
-          {isLoading ? (
-            <Box sx={{ width: "100%" }}>
-              <LinearProgress />
-            </Box>
-          ) : (
-            mapCountry(listCountry)
-          )}
+          <Box
+            sx={{
+              padding: {
+                xs: "2.5rem",
+                sm: "0px",
+              },
+            }}
+          >
+            {isLoading ? (
+              <Box sx={{ width: "100%" }}>
+                <LinearProgress />
+              </Box>
+            ) : (
+              mapCountry(listCountry)
+            )}
+          </Box>
         </div>
       </div>
     </div>
