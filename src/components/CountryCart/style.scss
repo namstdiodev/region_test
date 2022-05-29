@@ -1,8 +1,18 @@
 .cart-country {
-  width: 264px;
-  height: 92px;
-  margin-right: 74px;
   & img {
     object-fit: cover;
+  }
+  & .name-country {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+  }
+  & .title-info {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 600;
+    color: #000000;
+    margin-right: 7px;
   }
 }
