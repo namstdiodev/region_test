@@ -38,6 +38,10 @@ export default function DetailPage({
     const values = Object.values(object);
     return values[values.length - 1];
   };
+  
+  const formatNumber = (num: any) => {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+  };
 
   return (
     <div className="content-body-detail">
@@ -91,7 +95,7 @@ export default function DetailPage({
                   />
                   <InfoCountry
                     title="Population"
-                    text={dataDetail?.population}
+                    text={formatNumber(dataDetail?.population)}
                   />
                   <InfoCountry title="Region" text={dataDetail?.region} />
                   <InfoCountry
