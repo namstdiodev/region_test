@@ -40,22 +40,31 @@ $input-color-light: hsl(0, 0%, 52%) !default;
   --background-color: hsl(0, 0%, 98%);
   --text-color: hsl(200, 15%, 8%);
   --element-color: hsl(0, 0%, 100%);
+  --icon-color: hsl(209, 23%, 22%);
+  --box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  
 }
 
 html[data-theme="light"] {
   --background-color: hsl(0, 0%, 98%);
   --text-color: hsl(200, 15%, 8%);
   --element-color: hsl(0, 0%, 100%);
+  --icon-color: hsl(209, 23%, 22%);
+  --box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+
 }
 
 html[data-theme="dark"] {
   --background-color: hsl(207, 26%, 17%);
   --text-color: hsl(0, 0%, 100%);
   --element-color: hsl(209, 23%, 22%);
+  --icon-color: hsl(0, 0%, 100%);
+  --box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+
 }
 
 * {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Nunito Sans", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

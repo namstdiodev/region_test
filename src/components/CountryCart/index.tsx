@@ -15,7 +15,14 @@ export default function CountryCart({ data }: Props) {
   };
   return (
     <>
-      <Card sx={{ maxWidth: 294 }} className="cart-country">
+      <Card
+        sx={{
+          maxWidth: 294,
+          backgroundColor: "var(--element-color)",
+          color: "var(--text-color)",
+        }}
+        className="cart-country"
+      >
         <CardActionArea>
           <CardMedia
             component="img"
@@ -24,22 +31,30 @@ export default function CountryCart({ data }: Props) {
             alt="flag"
           />
           <CardContent>
-            <Typography gutterBottom component="div">
-              <span className="name-country">{data?.name?.common || ""}</span>
+            <Typography
+              gutterBottom
+              variant="subtitle1"
+              component="div"
+              className="name-country"
+              sx={{ fontWeight: "800" }}
+            >
+              {data?.name?.common || ""}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2">
               <div>
                 <div>
-                  <span className="title-info">Population:</span>
-                  <span>{formatNumber(data?.population)}</span>
+                  <span className="title-info text-region-info">
+                    Population:
+                  </span>
+                  <span> {formatNumber(data?.population)}</span>
                 </div>
                 <div>
-                  <span className="title-info">Region:</span>
-                  <span>{data?.region}</span>
+                  <span className="text-region-info">Region:</span>
+                  <span> {data?.region}</span>
                 </div>
                 <div>
-                  <span className="title-info">Capital:</span>
-                  <span>{data?.capital?.[0]}</span>
+                  <span className="text-region-info">Capital:</span>
+                  <span> {data?.capital?.[0]}</span>
                 </div>
               </div>
             </Typography>

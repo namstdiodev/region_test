@@ -134,68 +134,69 @@ function Home() {
 
   return (
     <div data-theme={isDark ? "dark" : "light"}>
-      <Header />
+      <div className="background-container">
+        <Header />
+        <div className="content-body">
+          <div className="search-filter">
+            <div className="group-search">
+              <SearchIcon sx={{ color: "var(--icon-color)" }} />
+              <input
+                className="search"
+                type="text"
+                placeholder="Search for a country..."
+                onChange={(e) => {
+                  e.preventDefault();
+                  handleSearch(e);
+                }}
+              />
+            </div>
+            <div className="group-filter-region">
+              <button onClick={handleClick} className="filter-region">
+                <div className="filter-region-text">
+                  {filterParams?.region === "All"
+                    ? "Filter by Region"
+                    : filterParams?.region}
+                </div>
+                <KeyboardArrowDownIcon sx={{ color: "var(--icon-color)" }} />
+              </button>
+              <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                  "aria-labelledby": "basic-button",
+                }}
+              >
+                {listRegion?.length &&
+                  listRegion?.map((item, index) => {
+                    return (
+                      <MenuItem
+                        key={index}
+                        onClick={() => {
+                          setFilterParams({
+                            name: filterParams?.name,
+                            region: item,
+                          });
+                          handleClose();
+                        }}
+                      >
+                        {item}
+                      </MenuItem>
+                    );
+                  })}
+              </Menu>
+            </div>
+          </div>
 
-      <div className="content-body">
-        <div className="search-filter">
-          <div className="group-search">
-            <SearchIcon />
-            <input
-              className="search"
-              type="text"
-              placeholder="Search for a country..."
-              onChange={(e) => {
-                e.preventDefault();
-                handleSearch(e);
-              }}
-            />
-          </div>
-          <div className="group-filter-region">
-            <button onClick={handleClick} className="filter-region">
-              <div className="filter-region-text">
-                {filterParams?.region === "All"
-                  ? "Filter by Region"
-                  : filterParams?.region}
-              </div>
-              <KeyboardArrowDownIcon />
-            </button>
-            <Menu
-              id="basic-menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              MenuListProps={{
-                "aria-labelledby": "basic-button",
-              }}
-            >
-              {listRegion?.length &&
-                listRegion?.map((item, index) => {
-                  return (
-                    <MenuItem
-                      key={index}
-                      onClick={() => {
-                        setFilterParams({
-                          name: filterParams?.name,
-                          region: item,
-                        });
-                        handleClose();
-                      }}
-                    >
-                      {item}
-                    </MenuItem>
-                  );
-                })}
-            </Menu>
-          </div>
+          {isLoading ? (
+            <Box sx={{ width: "100%" }}>
+              <LinearProgress />
+            </Box>
+          ) : (
+            mapCountry(listCountry)
+          )}
         </div>
-
-        {isLoading ? (
-          <Box sx={{ width: "100%" }}>
-            <LinearProgress />
-          </Box>
-        ) : (
-          mapCountry(listCountry)
-        )}
       </div>
     </div>
   );

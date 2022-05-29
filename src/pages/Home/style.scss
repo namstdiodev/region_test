@@ -1,5 +1,8 @@
+.background-container {
+  background-color: var(--background-color);
+}
+
 .content-body {
-  background-color: #fafafa;
   padding: 40px 300px;
   height: 100vh;
   overflow-x: hidden;
@@ -23,26 +26,36 @@
       width: 480px;
       position: relative;
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
-
+      
       & .MuiSvgIcon-root {
         position: absolute;
         margin-left: 30px;
-        top: 18px;
+        top: 16px;
       }
-
+      
       & .search {
+        background-color: var(--element-color);
         padding-left: 74px;
         height: 100%;
         border-radius: 8px;
         border: none;
         width: 100%;
+        &::placeholder {
+          color: var(--text-color);
+          font-size: 14px;
+        }
       }
     }
     & .group-filter-region {
       cursor: pointer;
+
+      & .filter-region-text {
+        font-size: 14px;
+        color: var(--text-color);
+      }
     }
     & .filter-region {
-      background-color: #ffff;
+      background-color: var(--element-color);
       outline: none;
       border: none;
       cursor: pointer;
@@ -64,7 +77,7 @@
         z-index: 99;
         top: 60px;
         left: 0;
-        background-color: white;
+        background-color: var(--element-color);
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
       }
 
@@ -72,5 +85,17 @@
         display: none;
       }
     }
+  }
+}
+
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+  top: 180px !important;
+  width: 200px !important;
+  border-radius: 8px !important;
+  background-color: var(--element-color) !important;
+  li {
+    color: var(--text-color);
+    padding-left: 24px;
+    font-size: 14px;
   }
 }
