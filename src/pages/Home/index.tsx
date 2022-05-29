@@ -1,20 +1,20 @@
-import * as React from "react";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SearchIcon from "@mui/icons-material/Search";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import LinearProgress from "@mui/material/LinearProgress";
-import { useEffect, useState, useContext } from "react";
-import CountryCart from "../../components/CountryCart";
-import CountriesAPI from "../../services/api/countries";
-import "./style.scss";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Menu from "@mui/material/Menu";
+import * as React from "react";
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { DarkThemeContext } from "../../components/ContextTheme";
+import CountryCart from "../../components/CountryCart";
 import { Header } from "../../components/Header";
 import MenuItem from "@mui/material/MenuItem";
 import { debounce } from "lodash";
+import CountriesAPI from "../../services/api/countries";
 import { removeMark } from "../../utils/helper";
-import { Link } from "react-router-dom";
+import "./style.scss";
 
 function Home() {
   const { isDark } = useContext(DarkThemeContext);
@@ -184,6 +184,7 @@ function Home() {
                 MenuListProps={{
                   "aria-labelledby": "basic-button",
                 }}
+                className="filter-popup"
               >
                 {listRegion?.length &&
                   listRegion?.map((item, index) => {

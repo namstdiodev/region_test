@@ -81,7 +81,7 @@
   }
 }
 
-.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+.filter-popup .MuiPaper-root {
   top: 180px !important;
   width: 200px !important;
   border-radius: 8px !important;
@@ -94,7 +94,7 @@
 }
 
 @media screen and (max-width: 899px) {
-  .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+  .filter-popup .MuiPaper-root {
     top: 285px !important;
   }
 }
