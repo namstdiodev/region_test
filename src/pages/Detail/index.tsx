@@ -1,14 +1,13 @@
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
-import LinearProgress from "@mui/material/LinearProgress";
-import { AnyRecord } from "dns";
 import Grid from "@mui/material/Grid";
+import LinearProgress from "@mui/material/LinearProgress";
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { DarkThemeContext } from "../../components/ContextTheme";
 import { Header } from "../../components/Header";
 import CountriesAPI from "../../services/api/countries";
-import { Typography } from "@mui/material";
 import "./style.scss";
 
 export default function Detail() {
