@@ -12,9 +12,7 @@ import Menu from "@mui/material/Menu";
 import { DarkThemeContext } from "../../components/ContextTheme";
 import { Header } from "../../components/Header";
 import MenuItem from "@mui/material/MenuItem";
-
 import { debounce } from "lodash";
-
 import { removeMark } from "../../utils/helper";
 import { Link } from "react-router-dom";
 
@@ -207,7 +205,6 @@ function Home() {
               </Menu>
             </div>
           </Box>
-
           <Box
             sx={{
               padding: {

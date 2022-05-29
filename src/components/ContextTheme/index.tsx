@@ -1,10 +1,4 @@
-import {
-  createContext,
-  ReactNode,
-  useEffect,
-  useState,
-  useLayoutEffect,
-} from "react";
+import { createContext, ReactNode, useState, useLayoutEffect } from "react";
 
 interface DarkThemeContextData {
   isDark: boolean;
