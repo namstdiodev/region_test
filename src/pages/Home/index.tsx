@@ -49,7 +49,11 @@ function Home() {
         </Grid>
       );
     } else {
-      return "There are currently no countries! Please try again";
+      return (
+        <div className="not-found-text">
+          There are currently no countries! Please try again
+        </div>
+      );
     }
   };
 
@@ -209,7 +213,7 @@ function Home() {
           <Box
             sx={{
               padding: {
-                xs: "2.5rem",
+                xs: listCountry?.length === 0 || isLoading ? "2.5rem 0" : "2.5rem",
                 sm: "0px",
               },
             }}

@@ -2,6 +2,11 @@
   background-color: var(--background-color);
 }
 
+.not-found-text {
+  margin-left: 0 -40px !important;
+  color: var(--text-color)
+}
+
 .content-body {
   padding: 40px 5vw;
   height: 100vh;
