@@ -6,11 +6,6 @@
   padding: 40px 5vw;
   height: 100vh;
   overflow-x: hidden;
-  // & .list-country {
-  // display: flex;
-  // align-items: center;
-  // flex-wrap: wrap;
-  // }
 
   & .search-filter {
     justify-content: space-between;
@@ -22,13 +17,13 @@
       height: 54px;
       position: relative;
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
-      
+
       & .MuiSvgIcon-root {
         position: absolute;
         margin-left: 30px;
         top: 16px;
       }
-      
+
       & .search {
         background-color: var(--element-color);
         padding-left: 74px;

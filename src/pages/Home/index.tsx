@@ -43,7 +43,7 @@ function Home() {
         <Grid container spacing={{ xs: 4, md: 8 }}>
           {listCountry?.map((item: any, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-              <Link to={`/detail?country=${item?.name?.common}`}>
+              <Link to={`/detail?${item?.name?.common}`}>
                 <CountryCart data={item} />
               </Link>
             </Grid>
