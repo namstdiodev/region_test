@@ -42,7 +42,7 @@ function Home() {
       return (
         <Grid
           container
-          spacing={{ xs: 2, md: 8 }}
+          spacing={{ xs: 4, md: 8 }}
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
           {listCountry?.map((item: any, index) => (
